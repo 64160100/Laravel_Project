@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ManagementPositionModel extends Model
 {   
-    protected $connection = 'mydb';
+    
     protected $table = 'ManagementPosition';
     protected $primaryKey = 'Id_ManagementPosition';
     protected $fillable = [

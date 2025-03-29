@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KpiModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Kpi';
     protected $primaryKey = 'Id_Kpi';
     protected $fillable = [

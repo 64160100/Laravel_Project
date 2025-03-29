@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ApproveModel extends Model
 {
-    protected $connection = 'mydb';
     protected $table = 'Approve';
     protected $primaryKey = 'Id_Approve';
     protected $fillable = [

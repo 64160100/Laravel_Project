@@ -7,8 +7,8 @@ git push -u origin (ชื่อ branch ตัวเอง)
 
 git checkout ชื่อ branch
 
-docker-compose exec app php artisan config:cache
-docker-compose exec app php artisan migrate
+docker-compose exec strategyweb php artisan config:cache
+docker-compose exec strategyweb php artisan migrate
 
 composer require tymon/jwt-auth
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
@@ -59,3 +59,7 @@ git config --global -l
 
 UPDATE Project SET Count_Steps = 0;
 UPDATE Approve SET Status = 'I';
+
+docker-compose stop
+
+docker-compose run --rm strategyweb composer install

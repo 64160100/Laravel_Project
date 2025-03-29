@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubProjectModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Sub_Project';
     protected $primaryKey = 'Id_Sub_Project';
     protected $keyType = 'int';

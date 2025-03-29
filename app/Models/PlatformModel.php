@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlatformModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Platform';
     protected $primaryKey = 'Id_Platform';
     protected $keyType = 'int';

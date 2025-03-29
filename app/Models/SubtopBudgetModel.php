@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubtopBudgetModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Subtopic_Budget';
     protected $primaryKey = 'Id_Subtopic_Budget'; 
     protected $fillable = [

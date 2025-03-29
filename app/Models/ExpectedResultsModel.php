@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExpectedResultsModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Expected_Results';
     protected $primaryKey = 'Id_Expected_Results';
     protected $fillable = [

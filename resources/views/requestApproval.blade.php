@@ -613,12 +613,12 @@ Carbon::setLocale('th');
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="status-button approved">
-                                        <i class='bx bx-like'></i> อนุมัติ
+                                        <i class='bx bx-like'></i> เห็นควร
                                     </button>
                                 </form>
                                 <button type="button" class="status-button not-approved" data-bs-toggle="modal"
                                     data-bs-target="#commentModal-{{ $approval->Id_Approve }}">
-                                    <i class='bx bx-dislike'></i> ไม่อนุมัติ
+                                    <i class='bx bx-dislike'></i> ไม่เห็นควร
                                 </button>
                             </div>
                         </div>

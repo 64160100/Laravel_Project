@@ -233,7 +233,7 @@
 @section('content')
 <div class="budget-container">
     <div class="header">
-        <h1>จัดการเอกสารโครงการ</h1>
+        <h1>จัดการงบประมาณ</h1>
     </div>
     <div class="content-box">
         <div class="all-budget">

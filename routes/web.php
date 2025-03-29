@@ -11,6 +11,7 @@ use App\Http\Controllers\ProposeProjectController;
 use App\Http\Controllers\RequestApprovalController;
 use App\Http\Controllers\ReportFormController;
 use App\Http\Controllers\SustainableDevelopmentGoalsController;
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 require __DIR__.'/account.php';
@@ -29,7 +30,7 @@ Route::post('/createProject/{Strategic_Id}', [ListProjectController::class, 'cre
 Route::put('/approvals/disapproveAll/{id}', [ListProjectController::class, 'disapproveAll'])->name('disapproveAll');
 Route::put('/approvals/updateAllStatus', [RequestApprovalController::class, 'updateAllStatus'])->name('updateAllStatus');
 
-Route::get('/search-projects', [ListProjectController::class, 'searchProjects'])->name('search.projects');// การเสนอโครงการ
+Route::get('/search-projects', [ListProjectController::class, 'searchProjects'])->name('search.projects');
 
 Route::get('/proposeProject', [ProposeProjectController::class, 'proposeProject'])->name('proposeProject');
 Route::post('/projects/submit-for-approval/{id}', [ProposeProjectController::class, 'submitForApproval'])->name('projects.submitForApproval');
@@ -54,7 +55,6 @@ Route::put('/editProject/{Id_Project}', [ListProjectController::class, 'updatePr
 
 // แก้ไขโครงการ
 Route::put('/project/{id}', [ListProjectController::class, 'update'])->name('projects.update');
-Route::get('/project/{Id_Project}', [ProjectController::class, 'viewProject'])->name('viewProject');
 
 //แสดงหน้า Strategic
 Route::get('/viewProjectInStrategic/{Id_Strategic}', [ListProjectController::class, 'viewProjectInStrategic'])->name('viewProjectInStrategic');

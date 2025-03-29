@@ -23,7 +23,7 @@ class ReportFormController extends Controller
     public function showReportForm($id)
     {
         $project = ListProjectModel::with([ 'employee', 'targets.targetDetails', 'locations', 
-                            'projectHasIndicators.indicators','shortProjects',
+                            'projectHasIndicators.indicators','shortProjects','objectives',
                             'monthlyPlans','monthlyPlans.month', 'monthlyPlans.pdca',])->findOrFail($id);
 
         $months = MonthsModel::orderBy('Id_Months', 'asc')->pluck('Name_Month', 'Id_Months');
@@ -33,6 +33,9 @@ class ReportFormController extends Controller
         $quarterProjects = StrategicHasQuarterProjectModel::with(['strategic', 'quarterProject'])
                     ->where('Quarter_Project_Id', $quarterProjectId)
                     ->get();
+                    
+        $project->formatted_first_time = formatDateThai($project->First_Time);
+        $project->formatted_end_time = formatDateThai($project->End_Time);
 
         $data = [
             'title' => $project->Name_Project,
@@ -69,7 +72,6 @@ class ReportFormController extends Controller
                 $approval->save();
             }
 
-        // Generate and save PDF after marking the project as complete
         $this->generateAndSavePDF($id);
 
         return redirect()->back()->with('success', 'โครงการเสร็จสิ้นและสร้าง PDF สำเร็จ!');

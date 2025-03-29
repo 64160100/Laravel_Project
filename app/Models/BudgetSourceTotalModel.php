@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BudgetSourceTotalModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Budget_Source_Total';
     protected $primaryKey = 'Id_Budget_Source_Total';
     

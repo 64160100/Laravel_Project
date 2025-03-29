@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kpi_ProgramModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Kpi_Program';
     protected $primaryKey = 'Id_KPI_Program';
     protected $keyType = 'int';

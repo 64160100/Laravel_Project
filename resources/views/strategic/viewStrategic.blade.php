@@ -1,11 +1,20 @@
 @extends('navbar.app')
-<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="{{ asset('css/viewStrategic.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ asset('css/viewStrategic.css') }}">
 
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
-        <h1>แผนยุทธศาสตร์</h1>
+<div class="d-flex justify-content-start align-items-center">
+        <a href="{{ route('setting') }}" class="back-btn">
+            <i class='bx bxs-left-arrow-square'></i>
+        </a>
+        <h1 class="ms-3">แผนยุทธศาสตร์</h1>
     </div>
 
     <div class="grid gap-4 mt-4">

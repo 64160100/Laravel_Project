@@ -322,7 +322,7 @@
 
                     <div class="photo-container">
                         <div class="employee-photo">
-                            <img src="{{ asset('images/images.jpg') }}" alt="Employee Photo"
+                            <img src="{{ asset('images/profile.png') }}" alt="Employee Photo"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>

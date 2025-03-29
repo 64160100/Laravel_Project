@@ -39,7 +39,7 @@
                         <!-- <img src="{{asset('images/lib_buu.png')}}" class="img-fluid animated" alt=""> -->
                         <img src="{{asset('images/loginpages.png')}}" class="img-fluid " alt="">
                     </div>
-
+    
                     <div class="col-lg-6 d-flex flex-column justify-content-center order-lg-last" data-aos="fade-in">
                         <div class='card p-4 custom-bg'>
                             <h1 class="text-center">ระบบติดตามแผนงาน</h1>

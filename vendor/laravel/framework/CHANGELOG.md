@@ -1,6 +1,35 @@
 # Release Notes for 11.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v11.43.1...11.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v11.44.1...11.x)
+
+## [v11.44.1](https://github.com/laravel/framework/compare/v11.44.0...v11.44.1) - 2025-03-05
+
+* [11.x] Add valid values to ensure method by [@lancepioch](https://github.com/lancepioch) in https://github.com/laravel/framework/pull/54840
+* Fix attribute name used on `Validator` instance within certain rule classes by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/framework/pull/54845
+* [11.x] Fix `Application::interBasePath()` fails to resolve application when project name is "vendor" by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/framework/pull/54871
+* [11.x] Test improvements by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/framework/pull/54879
+
+## [v11.44.0](https://github.com/laravel/framework/compare/v11.43.2...v11.44.0) - 2025-02-24
+
+* [11.x] Fix parsing `PHP_CLI_SERVER_WORKERS` as `string` instead of `int` by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/framework/pull/54724
+* [11.x] Rename Redis parse connection for cluster test method to follow naming conventions by [@jackbayliss](https://github.com/jackbayliss) in https://github.com/laravel/framework/pull/54721
+* [11.x] Allow `readAt` method to use in database channel by [@utsavsomaiya](https://github.com/utsavsomaiya) in https://github.com/laravel/framework/pull/54729
+* [11.x] Fix: Custom Exceptions with Multiple Arguments does not properly rein… by [@pandiselvamm](https://github.com/pandiselvamm) in https://github.com/laravel/framework/pull/54705
+* [11.x] Update ConcurrencyTest exception reference to use namespace by [@jackbayliss](https://github.com/jackbayliss) in https://github.com/laravel/framework/pull/54732
+* [11.x] Deprecate `Factory::$modelNameResolver` by [@samlev](https://github.com/samlev) in https://github.com/laravel/framework/pull/54736
+* [11x.] Improved typehints for `InteractsWithDatabase` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/54748
+* [11.x] Improved typehints for `InteractsWithExceptionHandling` && `ExceptionHandlerFake` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/54747
+
+## [v11.43.2](https://github.com/laravel/framework/compare/v11.43.1...v11.43.2) - 2025-02-19
+
+* [11.x] Add missing test for `implode()` by [@nuernbergerA](https://github.com/nuernbergerA) in https://github.com/laravel/framework/pull/54704
+* [11.x] Enhance eventStream to Support Custom Events and Start Messages by [@devhammed](https://github.com/devhammed) in https://github.com/laravel/framework/pull/54695
+* Revert "[11.x] Enhance eventStream to Support Custom Events and Start Messages" by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/framework/pull/54714
+* [11.x] Replace MD5 with xxh128 in File::hasSameHash() by [@vlakoff](https://github.com/vlakoff) in https://github.com/laravel/framework/pull/54690
+* [11.x] Add parameter typing for closure to addGlobalScope method by [@jnoordsij](https://github.com/jnoordsij) in https://github.com/laravel/framework/pull/54677
+* [11.x] `assertOnlyJsonValidationErrors` / `assertOnlyInvalid` by [@gdebrauwer](https://github.com/gdebrauwer) in https://github.com/laravel/framework/pull/54678
+* [11.x] Allow for assertions against `QueueFake::pushRaw()` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/54703
+* [11.x] Fix: Handles non nested explode of multiple Date and Numeric rules in ValidationRuleParser by [@AlexandreMeledandri](https://github.com/AlexandreMeledandri) in https://github.com/laravel/framework/pull/54718
 
 ## [v11.43.1](https://github.com/laravel/framework/compare/v11.43.0...v11.43.1) - 2025-02-19
 

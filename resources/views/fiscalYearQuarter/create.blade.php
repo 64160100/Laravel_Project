@@ -19,7 +19,13 @@
             </div>
             <div class="form-group">
                 <label for="Quarter">ไตรมาส</label>
-                <input type="number" name="Quarter" class="form-control" required min="1" max="4">
+                <select name="Quarter" class="form-control" required>
+                    <option value="" disabled selected>เลือกไตรมาส</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">สร้าง</button>

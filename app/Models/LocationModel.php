@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LocationModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Location';
     protected $primaryKey = 'Id_Location';
     protected $fillable = [

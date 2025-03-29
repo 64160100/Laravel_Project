@@ -1061,6 +1061,7 @@ body {
         display: block !important; }
     .sidebar_minimize .sidebar .menubars {
       display: none; }
+/*
   .sidebar_minimize.sidebar_minimize_hover .sidebar {
     width: 265px;
     position: fixed;
@@ -1112,7 +1113,9 @@ body {
       .sidebar_minimize.sidebar_minimize_hover .sidebar .user-profile .avatar.avatar-minimize {
         display: none !important; }
     .sidebar_minimize.sidebar_minimize_hover .sidebar .menubars {
-      display: flex; } }
+      display: flex; } 
+*/
+      }
 /*     	Customable Layouts Colors     */
 .main-header .navbar-header[data-background-color]:not([data-background-color="white"]) .nav-search .input-group, .main-header[data-background-color="custom"] .navbar-header .nav-search .input-group {
   border: 0;

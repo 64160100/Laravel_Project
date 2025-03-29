@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MonthlyPlansModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Monthly_Plans';
     protected $primaryKey = 'Id_Monthly_Plans';
     protected $fillable = [

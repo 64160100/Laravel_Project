@@ -41,6 +41,7 @@
 }
 </style>
 
+<link rel="stylesheet" href="{{ asset('css/viewStrategic.css') }}">
 <div class="modal fade" id="strategicAnalysisModal" tabindex="-1" aria-labelledby="strategicAnalysisModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -53,6 +54,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <button type="button" class="btn-add" data-bs-toggle="modal"
+                    data-bs-target="#addStrategicOpportunityModal">
+                    เพิ่มโอกาสเชิงกลยุทธ์ใหม่
+                </button>
                 <div class="d-flex justify-content-end mb-3">
                 </div>
                 <table class="table table-bordered">
@@ -187,8 +192,8 @@
                             name="Name_Strategic_Opportunity" value="{{ $opportunity->Name_Strategic_Opportunity }}"
                             required>
                     </div>
-                    <input type="hidden" name="Strategic_Id_Strategic"
-                        value="{{ $opportunity->Strategic_Id_Strategic }}">
+                    <input type="hidden" name="Strategic_Id"
+                        value="{{ $opportunity->Strategic_Id}}">
 
                     <div class="mb-3">
                         <label for="details" class="form-label">โอกาสเชิงกลยุทธ์</label>
@@ -377,5 +382,41 @@ document.addEventListener('DOMContentLoaded', function() {
     allDeleteButtons.forEach(button => {
         button.style.display = 'none';
     });
+});
+</script>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="addStrategicOpportunityModal" tabindex="-1"
+    aria-labelledby="addStrategicOpportunityModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStrategicOpportunityModalLabel">เพิ่มโอกาสเชิงกลยุทธ์ใหม่</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('StrategicOpportunity.addOpportunity') }}" method="POST">
+                    @csrf
+                    <input type="hidden" class="form-control" id="Strategic_Id" name="Strategic_Id" readonly required>
+                    <div class="mb-3">
+                        <label for="Name_Strategic_Opportunity" class="form-label">ชื่อโอกาสเชิงกลยุทธ์</label>
+                        <input type="text" class="form-control" id="Name_Strategic_Opportunity" name="Name_Strategic_Opportunity" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">บันทึก</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParts = window.location.pathname.split('/');
+    const strategicId = urlParts[urlParts.length - 1];
+
+    const strategicIdInput = document.getElementById('Strategic_Id');
+    if (strategicIdInput) {
+        strategicIdInput.value = strategicId;
+    }
 });
 </script>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutputModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Output';
     protected $primaryKey = 'Id_Output';
     protected $fillable = [

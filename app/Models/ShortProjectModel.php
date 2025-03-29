@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShortProjectModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Short_Project';
     protected $primaryKey = 'id_Short_Project';
     protected $keyType = 'int';

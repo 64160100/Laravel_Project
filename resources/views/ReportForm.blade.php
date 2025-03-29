@@ -185,6 +185,9 @@ Carbon::setLocale('th');
             <div class="section-title">2. ผู้รับผิดชอบโครงการ</div>
             <div class="form-group">
                 <label>ผู้รับผิดชอบโครงการ:</label>
+                
+                <input type="text" class="form-control" 
+                value="{{ $project->employee->Prefix_Name }}{{ $project->employee->Firstname }} {{ $project->employee->Lastname }}" readonly>
             </div>
         </div>
 
@@ -192,10 +195,11 @@ Carbon::setLocale('th');
         <div class="section">
             <div class="section-title">3. วัตถุประสงค์</div>
             <div class="form-group">
-                <textarea class="form-control"
-                rows="5"
-                 style="resize: vertical !important; min-height: 100px !important; max-height: 500px !important;"
-                placeholder="ระบุวัตถุประสงค์ของโครงการ" readonly>{{ $project->Objective_Project }}</textarea>
+                <textarea class="form-control"rows="5" readonly>
+                    @foreach($project->objectives as $objective)
+                        {{ $objective->Description_Objective }}
+                    @endforeach
+                </textarea>
             </div>
         </div>
 
@@ -231,9 +235,9 @@ Carbon::setLocale('th');
             <div class="form-group">
                 <label>ระยะเวลาดำเนินงาน</label><br>
                 <div>วันที่เริ่มต้น:</div>
-                <input type="text" class="form-control mb-2" value="{{ $project->First_Time }}" readonly>
+                <input type="text" class="form-control mb-2" value="{{ $project->formatted_first_time }}" readonly>
                 <div>วันที่สิ้นสุด:</div>
-                <input type="text" class="form-control mb-2" value="{{ $project->End_Time }}" readonly>
+                <input type="text" class="form-control mb-2" value="{{ $project->formatted_end_time }}" readonly>
             </div>
         </div>
 
@@ -251,49 +255,69 @@ Carbon::setLocale('th');
             <div class="section-title">7. วิทยากร</div>
             <div class="form-group">
                 <label>วิทยากร:</label>
-                <input type="text" class="form-control" value="{{ $project->Speaker }}">
+                <input type="text" class="form-control" value="{{ $project->Name_Speaker }}">
             </div>
         </div>
 
         <div class="section">
-        <div class="section-title">8. รูปแบบกิจกรรมการดำเนินงาน</div>
-        <b>วิธีการดำเนินงาน</b><br>
-        <p> 
-            @foreach($project->shortProjects as $shortProject)
-                
-                    {{ $loop->iteration }}. {{ $shortProject->Details_Short_Project }}<br>
-            @endforeach
-        </p>
+            <div class="section-title">8. รูปแบบกิจกรรมการดำเนินงาน</div>
+            @if ($project->Project_Type == 'S')
 
-        <p><b>ขั้นตอนและแผนการดำเนินงาน(PDCA)</b><br></p>
-        <!-- โครงการระยะยาว -->
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2" style="width: 35%; line-height: 0.6; text-align: center; vertical-align: middle;" >กิจกรรมและแผนการเบิกจ่ายงบประมาณ</th>
-                    <th colspan="12" style="text-align: center; vertical-align: middle;">
-                        <span>ปีงบประมาณ พ.ศ.</span>
+                <b>วิธีการดำเนินงาน</b><br>
+                <p> 
+                    @foreach($project->shortProjects as $shortProject)
+                        
+                            {{ $loop->iteration }}. {{ $shortProject->Details_Short_Project }}<br>
+                    @endforeach
+                </p>
+            @else
+
+                <p><b>ขั้นตอนและแผนการดำเนินงาน(PDCA)</b><br></p>
+                <!-- โครงการระยะยาว -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 40%; line-height: 0.6;">กิจกรรมและแผนการเบิกจ่ายงบประมาณ</th>
+                            <th colspan="12">
+                                <span>ปีงบประมาณ พ.ศ.</span>
+                                @foreach($quarterProjects as $year)
+                                    <span>{{ toThaiNumber($year) }}</span>
+                                @endforeach
+                            </th>
+                        </tr>
+                        <tr>
+                            @foreach($months as $month)
+                            <th>{{ $month }}</th>
+                            @endforeach
+                        </tr>
+                    </thead>
+                    <tbody>
                         @php
-                            $uniqueYears = $quarterProjects->pluck('quarterProject.Fiscal_Year')->unique();
+                            $groupedPdcaDetails = $project->pdcaDetails->groupBy(function($pdcaDetail) {
+                                return $pdcaDetail->pdca->Name_PDCA ?? 'N/A';
+                            });
                         @endphp
 
-                        @foreach($uniqueYears as $year)
-                            <span>{{ $year }}</span>
+                        @foreach($groupedPdcaDetails as $namePDCA => $pdcaDetails)
+                            <tr>
+                                <td style="text-align: left;">
+                                    <strong>{{ $namePDCA }}</strong><br>
+                                    @foreach($pdcaDetails as $pdcaDetail)
+                                        {{ toThaiNumber($loop->iteration) }}. {{ $pdcaDetail->Details_PDCA }}<br>
+                                    @endforeach
+                                </td>
+                                @for($month = 1; $month <= 12; $month++)
+                                    <td style="text-align: center;">
+                                    @if($project->monthlyPlans->where('Months_Id', $month)->where('PDCA_Stages_Id', $pdcaDetail->PDCA_Stages_Id)->isNotEmpty())
+                                        /
+                                    @endif
+                                    </td>
+                                @endfor
+                            </tr>
                         @endforeach
-                    </th>
-                </tr>
-                <tr>
-                    @foreach($months as $month)
-                        <th style="text-align: center; vertical-align: middle; min-width: 80px;">{{ $month }}</th>
-                    @endforeach
-                </tr>
-            </thead>
-            <tbody>
-                
-
-                
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+            @endif
 
         </div>
 
@@ -368,7 +392,7 @@ Carbon::setLocale('th');
                     @if (!empty($project) && $project->Status_Budget == 'Y')
                         <label>งบประมาณที่ใช้ทั้งสิ้น:</label>
                     @else
-                        <div class="text-danger"><b>ไม่มีงบประมาณ</b></div>
+                        <div>ไม่มีงบประมาณ</div>
                     @endif 
 
                     <div class="section-title mt-3">ข้อเสนอแนะ</div>

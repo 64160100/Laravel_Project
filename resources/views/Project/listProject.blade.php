@@ -56,10 +56,6 @@
                             <button class="btn-add">เพิ่มข้อมูล</button>
                         </form>
 
-                        <!-- <a href="{{ route('showCreateProject', ['Strategic_Id' => $Strategic->Id_Strategic]) }}"
-                            class="btn-add">
-                            <i class='bx bx-plus'></i>เพิ่มโครงการใหญ่
-                        </a> -->
                     </summary>
                     <div class="accordion-content">
                         @if ($Strategic->projects->isEmpty())
@@ -68,7 +64,6 @@
                         @foreach ($Strategic->projects as $Project)
                         <li class="d-flex justify-content-between align-items-center list-project">
                             <div>
-                                <a href="{{ route('viewProject', ['Id_Project' => $Project->Id_Project]) }}">
                                     {{ $Project->Name_Project }}                                
                             </div>
                             <a

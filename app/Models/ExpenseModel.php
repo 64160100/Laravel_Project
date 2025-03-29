@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExpenseModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Expense';
     protected $primaryKey = 'Id_Expense';
     

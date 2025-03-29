@@ -271,7 +271,7 @@
                 <div class="content-box">
                     <div class="section-header">
                         <h4>
-                            6. แหล่งงบประมาณ
+                            5. แหล่งงบประมาณ
                         </h4>
                     </div>
                     <div id="budgetDetails">
@@ -461,7 +461,7 @@
                 <div class="content-box">
                     <div class="section-header">
                         <h4>
-                            7. ผู้รับผิดชอบโครงการ
+                            6. ผู้รับผิดชอบโครงการ
                         </h4>
                     </div>
                     <div id="responsibleDetails">

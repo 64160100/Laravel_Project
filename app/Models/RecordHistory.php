@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class RecordHistory extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Record_History';
     protected $primaryKey = 'Id_Record_History';
     protected $fillable = [

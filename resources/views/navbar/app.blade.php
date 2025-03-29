@@ -429,7 +429,7 @@
                                     <div class="profile-container"
                                         style="background: linear-gradient(180deg, #8729DA 0%, #AC2BDD 100%); border: 1px solid #ccc; padding: 10px 20px; border-radius: 5px; display: flex; align-items: center; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: auto; max-width: 300px; margin-left: auto; margin-right: -20px;">
                                         <div class="avatar-sm" style="margin-right: 10px;">
-                                            <img src="{{ asset('images/profile.jpg') }}" alt="..."
+                                            <img src="{{ asset('images/profile.png') }}" alt="..."
                                                 class="avatar-img rounded-circle" />
                                         </div>
                                         <span class="profile-username"

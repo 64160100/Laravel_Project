@@ -1,8 +1,8 @@
 {
     "thsarabunnew": {
-        "normal": "\/var\/www\/public\/fonts\/\/thsarabunnew_normal_ded595748202e8bc28253047c3f27107",
-        "bold": "\/var\/www\/public\/fonts\/\/thsarabunnew_bold_f3de24a34c17eb1a0bf966415d0e3067",
-        "italic": "\/var\/www\/public\/fonts\/\/thsarabunnew_italic_22b1e71b2b64b36262202c500dd1d759",
-        "bold_italic": "thsarabunnew_bold_italic_f19b8684f539c2010caeff70a9922aa7"
+        "normal": "\/app\/public\/fonts\/\/thsarabunnew_normal_efae80a8622cbb4a898b97417ab6af47",
+        "bold": "\/app\/public\/fonts\/\/thsarabunnew_bold_4006f339cbd1c70f2c81b293becec09a",
+        "italic": "\/app\/public\/fonts\/\/thsarabunnew_italic_137e8fdae0cc516531329c4864be03c2",
+        "bold_italic": "thsarabunnew_bold_italic_94df4a1f7d38cbe74e3056d061e2051f"
     }
 }

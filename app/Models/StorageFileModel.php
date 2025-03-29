@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class StorageFileModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Storage_File';
     protected $primaryKey = 'Id_Storage_File';
     public $timestamps = false;

@@ -8,7 +8,7 @@ use App\Models\FiscalYearQuarterModel;
 
 class StrategicHasQuarterProjectModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Strategic_has_Quarter_Project';
     protected $fillable = [
         'Strategic_Id',

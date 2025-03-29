@@ -1,12 +1,12 @@
 <?php
 
 if (!function_exists('toThaiNumber')) {
-    // function toThaiNumber($number) {
-    //     return strtr(number_format((float)$number), [
-    //         '0' => '๐', '1' => '๑', '2' => '๒', '3' => '๓', '4' => '๔',
-    //         '5' => '๕', '6' => '๖', '7' => '๗', '8' => '๘', '9' => '๙'
-    //     ]);
-    // }
+    function digits($number) {
+        return strtr(number_format((float)$number), [
+            '0' => '๐', '1' => '๑', '2' => '๒', '3' => '๓', '4' => '๔',
+            '5' => '๕', '6' => '๖', '7' => '๗', '8' => '๘', '9' => '๙'
+        ]);
+    }
 
     function toThaiNumber($number) {
         $thaiNumbers = ['0' => '๐', '1' => '๑', '2' => '๒', '3' => '๓', '4' => '๔', 

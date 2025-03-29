@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectHasIntegrationCategoryModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Project_has_Integration_Category';
     protected $primaryKey = 'Id_Project_has_Integration_Category';
     protected $keyType = 'int';

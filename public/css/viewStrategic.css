@@ -30,6 +30,36 @@
   color: white;
 }
 
+.back-btn {
+  background: linear-gradient(180deg, #8729DA 0%, #AC2BDD 100%);
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 300px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:active {
+  transform: translateX(-2px) scale(0.98);
+}
+
+.back-btn i {
+  color: white;
+  font-size: 24px;
+}
+
 /* Quarter card styling */
 .grid.gap-4 {
   display: grid;

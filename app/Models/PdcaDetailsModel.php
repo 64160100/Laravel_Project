@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PdcaDetailsModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'PDCA_Stages_Details';
     protected $primaryKey = 'Id_PDCA_Stages_Details';
     protected $keyType = 'int';

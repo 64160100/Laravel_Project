@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BudgetSourceModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Budget_Source';
     protected $primaryKey = 'Id_Budget_Source';
     protected $fillable = [

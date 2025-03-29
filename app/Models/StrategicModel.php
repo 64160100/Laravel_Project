@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class StrategicModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Strategic';
     protected $primaryKey = 'Id_Strategic';
     protected $keyType = 'int';

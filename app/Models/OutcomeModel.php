@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutcomeModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Outcome';
     protected $primaryKey = 'Id_Outcome';
     protected $fillable = [

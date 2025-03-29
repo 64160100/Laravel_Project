@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ListProjectModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Project';
     protected $primaryKey = 'Id_Project';
     protected $keyType = 'int';

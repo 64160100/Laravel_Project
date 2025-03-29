@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExpenHasSubtopicBudgetModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Expense_has_Subtopic_Budget';
     protected $primaryKey = 'Id_Expense_has_Subtopic_Budget';
     

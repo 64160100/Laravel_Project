@@ -7,7 +7,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class EmployeeModel extends Model implements JWTSubject
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Employee';
     protected $primaryKey = 'Id_Employee';
     protected $fillable = [

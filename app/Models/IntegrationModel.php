@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class IntegrationModel extends Model
 {   
-    protected $connection = 'mydb';
+    
     protected $table = 'Integration_Category';
     protected $primaryKey = 'Id_Integration_Category';
     protected $keyType = 'int';

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectHasBudgetSourceModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Project_has_Budget_Source';
     protected $primaryKey = 'Id_Project_has_Budget_Source';
     protected $fillable = [

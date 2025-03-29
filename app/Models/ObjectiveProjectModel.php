@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ObjectiveProjectModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Objective_Project';
     protected $primaryKey = 'Id_Objective_Project';
     protected $keyType = 'int';

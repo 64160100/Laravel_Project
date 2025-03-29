@@ -41,3 +41,7 @@ Route::get('project-pdf/{Id_Project}', [PDFController::class, 'PDFProject'])->na
 
 Route::get('pdfStrategic/{Id_Project}', [PDFController::class, 'ctrlpPDFStrategic'])->name('pdf.strategicCtrlP');
 Route::get('pdfproject/{Id_Project}', [PDFController::class, 'ctrlpPDFProject'])->name('PDF.projectCtrlP');
+
+Route::post('/strategic-opportunity/add', [StrategicAnalysisController::class, 'addOpportunity'])->name('StrategicOpportunity.addOpportunity');
+
+Route::delete('/strategic-opportunity/{id}', [StrategicAnalysisController::class, 'destroyOpportunity'])->name('StrategicOpportunity.destroyOpportunity');

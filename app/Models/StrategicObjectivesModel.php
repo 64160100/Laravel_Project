@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class StrategicObjectivesModel extends Model
 {
-    protected $connection = 'mydb';
+    
     protected $table = 'Strategic_Objectives';
     protected $primaryKey = 'Id_Strategic_Objectives';
     protected $fillable = [

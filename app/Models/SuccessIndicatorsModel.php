@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SuccessIndicatorsModel extends Model
 {   
-    protected $connection = 'mydb';
+    
     protected $keyType = 'int';
     protected $table = 'Success_Indicators';
     protected $primaryKey = 'Id_Success_Indicators';
